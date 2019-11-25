@@ -38,12 +38,11 @@ if ($_SESSION['level'] > 1) {
 </head>
 
 <body>
+<h1 class="mt-2">Resources</h1>
 <?php
 
 if ($_SESSION['level'] > 1) {
-
     ?>
-    <h1 class="mt-2">Resources</h1>
     <div class="d-flex mt-3 mb-3">
         <div class="btn-group flex-fill" role="group" aria-label="Basic example">
             <a href="?action=newResource" class="btn btn-warning">Create New Resource</a>
