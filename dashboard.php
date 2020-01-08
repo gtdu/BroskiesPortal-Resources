@@ -38,10 +38,10 @@ if ($_SESSION['level'] > 1) {
 </head>
 
 <body>
+<h1 class="mt-2">Resources</h1>
 <?php
 
 if ($_SESSION['level'] > 1) {
-
     ?>
     <h1 class="mt-2">Resources</h1>
     <div class="d-flex mt-3 mb-3">
