@@ -107,10 +107,10 @@ if (count($resources) == 0) {
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th>Position</th>
-                <th>Title</th>
-                <th>Link</th>
-                <th>Description</th>
+                <th style="width: 15%">Position</th>
+                <th style="width: 20%">Title</th>
+                <th style="width: 30%">Link</th>
+                <th style="width: 35%">Description</th>
             </tr>
         </thead>
     <?php
@@ -118,7 +118,7 @@ if (count($resources) == 0) {
         echo "<tr>";
             echo "<td>" . $resource['position'] . "</td>";
             echo "<td>" . $resource['title'] . "</td>";
-            echo "<td><a href='" . $resource['link'] . "' target='_blank'>" . $resource['link'] . "</a></td>";
+            echo "<td><a href='" . $resource['link'] . "' target='_blank'>" . substr($resource['link'], 0, 40) . "...</a></td>";
             echo "<td>" . $resource['description'] . "</td>";
         echo "</tr>";
     }
