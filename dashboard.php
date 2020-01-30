@@ -16,7 +16,7 @@ if ($_SESSION['level'] > 1) {
         $handle->execute();
         header("Location: ?");
         die();
-    } else if ($_POST['action'] == 'newResource') {
+    } elseif ($_POST['action'] == 'newResource') {
         $handle = $config['dbo']->prepare('INSERT INTO resources (title, link, description, position) VALUES (?, ?, ?, ?)');
         $handle->bindValue(1, $_POST['title']);
         $handle->bindValue(2, $_POST['link']);
@@ -76,7 +76,7 @@ if ($_SESSION['level'] > 1) {
             </form>
         </div>
         <?php
-    } else if ($_GET['action'] == 'deleteResource') {
+    } elseif ($_GET['action'] == 'deleteResource') {
         ?>
         <div class="pl-4 pr-4 mb-4">
             <form method="post">
@@ -86,8 +86,7 @@ if ($_SESSION['level'] > 1) {
                         <?php
                         foreach ($resources as $resource) {
                             echo "<option value='" . $resource['id'] . "'>" . $resource['position'] . ': ' . $resource['title'] . "</option>";
-                        }
-                        ?>
+                        } ?>
                     </select>
                 </div>
                 <input type="hidden" name="action" value="deleteResource">
@@ -116,10 +115,10 @@ if (count($resources) == 0) {
     <?php
     foreach ($resources as $resource) {
         echo "<tr>";
-            echo "<td>" . $resource['position'] . "</td>";
-            echo "<td>" . $resource['title'] . "</td>";
-            echo "<td><a href='" . $resource['link'] . "' target='_blank'>" . substr($resource['link'], 0, 40) . "...</a></td>";
-            echo "<td>" . $resource['description'] . "</td>";
+        echo "<td>" . $resource['position'] . "</td>";
+        echo "<td>" . $resource['title'] . "</td>";
+        echo "<td><a href='" . $resource['link'] . "' target='_blank'>" . substr($resource['link'], 0, 40) . "...</a></td>";
+        echo "<td>" . $resource['description'] . "</td>";
         echo "</tr>";
     }
     echo "</table>";
